@@ -1,0 +1,194 @@
+{
+  "meta": {
+    "logoName": "Dr. Benjebara Ghali",
+    "phone": "06 75 75 76 88",
+    "email": "contact@drbenjebara.ma",
+    "instagram": "https://www.instagram.com/cabinet_dr_benjebara_ghali",
+    "whatsapp": "https://wa.me/212675757688"
+  },
+  "navbar": {
+    "ctaText": "Prendre Rendez-vous",
+    "links": [
+      { "label": "Accueil", "href": "#home" },
+      { "label": "About", "href": "#about" },
+      { "label": "Services", "href": "#services" },
+      { "label": "Galerie", "href": "#gallery" },
+      { "label": "Résultats", "href": "#results" },
+      { "label": "Contact", "href": "#contact" }
+    ]
+  },
+  "hero": {
+    "eyebrow": "Excellence en Médecine Dentaire",
+    "title1": "Redéfinissez votre ",
+    "titleAccent": "sourire",
+    "title2": " avec une expertise de pointe.",
+    "subtitle": "Cabinet Dentaire Multidisciplinaire à Tanger. Le Dr. Benjebara Ghali vous accompagne pour des soins d'exception alliant technologie et confort.",
+    "image": "/smiling-doctor-new.png",
+    "ctaText": "Découvrir nos soins",
+    "phone": "06 75 75 76 88"
+  },
+  "stats": {
+    "items": [
+      { "value": "10", "suffix": "+", "label": "Ans d'expérience" },
+      { "value": "2k", "suffix": "+", "label": "Patients satisfaits" },
+      { "value": "15", "suffix": "+", "label": "Services spécialisés" },
+      { "value": "Premium", "suffix": "", "label": "Qualité de soin", "isSpecial": true }
+    ]
+  },
+  "about": {
+    "eyebrow": "Votre Spécialiste",
+    "title": "Dr. Benjebara Ghali",
+    "subtitle": "Chirurgien-Dentiste & Médecine Dentaire",
+    "image": "/doctor-about.jpg",
+    "paragraphs": [
+      "Diplômé avec distinction, le Dr. Benjebara Ghali dirige une clinique multidisciplinaire à Tanger. Passionné par l'innovation, il intègre les dernières avancées technologiques pour garantir des diagnostics précis et des traitements durables.",
+      "Notre mission est de fournir des soins dentaires de haute qualité dans un environnement serein, où chaque patient reçoit une attention personnalisée."
+    ],
+    "cards": [
+      { "title": "Vision", "text": "L'excellence clinique accessible à tous." },
+      { "title": "Valeurs", "text": "Intégrité, innovation et empathie." }
+    ]
+  },
+  "services": {
+    "eyebrow": "Expertises",
+    "title": "Nos Services Multidisciplinaires",
+    "lead": "Une gamme complète de soins pour toute la famille.",
+    "list": [
+      {
+        "title": "Chirurgie dentaire",
+        "description": "Interventions complexes pour extractions et soins des pathologies buccales.",
+        "image": "/services-images/cirurgia.jpg"
+      },
+      {
+        "title": "Orthodontie",
+        "description": "Alignement parfait du sourire avec des solutions traditionnelles ou invisibles.",
+        "image": "/services-images/orthodontiste.jpg"
+      },
+      {
+        "title": "Implants dentaires",
+        "description": "Remplacement durable des dents manquantes avec des matériaux biocompatibles.",
+        "image": "/services-images/implant-dentaire.jpg.webp"
+      },
+      {
+        "title": "Blanchiment",
+        "description": "Retrouvez l'éclat de votre sourire avec un traitement professionnel sécurisé.",
+        "image": "/services-images/blanchement.jpeg"
+      },
+      {
+        "title": "Prothèses",
+        "description": "Conception de couronnes et bridges pour une restauration esthétique.",
+        "image": "/services-images/Prothèses.jpg"
+      },
+      {
+        "title": "Soins des caries",
+        "description": "Traitements conservateurs avec des matériaux esthétiques de haute qualité.",
+        "image": "/services-images/carie-pm.webp"
+      }
+    ]
+  },
+  "whyUs": {
+    "eyebrow": "Confiance",
+    "title": "Le patient au cœur de notre pratique.",
+    "lead": "Nous combinons l'expertise clinique à une attention particulière portée au confort de nos patients.",
+    "image": "/equipment-image/Équipement.jpg",
+    "items": [
+      { "title": "Matériel Moderne", "text": "Radiologie numérique et outils de précision de dernière génération." },
+      { "title": "Hygiène Garantie", "text": "Protocoles de stérilisation rigoureux aux normes internationales." },
+      { "title": "Soins Personnalisés", "text": "Une approche douce pour une expérience sereine et sans douleur." }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "Immersion",
+    "title": "Notre Galerie",
+    "items": [
+      { "src": "/doctor-about.jpg", "alt": "Cabinet Réception", "span": 2 },
+      { "src": "/services-images/cirurgia.jpg", "alt": "Salle de Soin", "span": 1 },
+      { "src": "/equipment-image/Équipement.jpg", "alt": "Équipement moderne", "span": 1 },
+      { "src": "/services-images/Prothèses.jpg", "alt": "Laboratoire clinique", "span": 1 },
+      { "src": "/dental-implants.jpg.webp", "alt": "Vue d'ensemble de la Clinique", "span": 3 }
+    ]
+  },
+  "results": {
+    "eyebrow": "Transformations",
+    "title": "Résultats Avant / Après",
+    "lead": "Découvrez les sourires que nous avons restaurés avec passion et précision.",
+    "list": [
+      {
+        "label": "Veneers",
+        "before": "/after-before/Veneers_before.jpg",
+        "after": "/after-before/Veneers_after.jpg"
+      },
+      {
+        "label": "Hollywood",
+        "before": "/after-before/hollywood_before.png",
+        "after": "/after-before/hollywood_after.png"
+      },
+      {
+        "label": "Veneer",
+        "before": "/after-before/veneer_before.png",
+        "after": "/after-before/veneer_after.png"
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Avis Patients",
+    "title": "Ils nous font confiance",
+    "list": [
+      { "stars": 5, "quote": "Une équipe très professionnelle et à l'écoute. Les soins sont réalisés avec une grande douceur. Je recommande vivement le Dr. Ghali.", "author": "Ahmed R." },
+      { "stars": 5, "quote": "Équipement moderne et hygiène irréprochable. Le résultat de mon implant est parfait et très naturel.", "author": "Sarah M." },
+      { "stars": 5, "quote": "Excellent accueil et ponctualité. Le docteur explique très bien chaque étape du traitement. Très rassurant.", "author": "Youssef K." }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Aide",
+    "title": "Questions Fréquentes",
+    "list": [
+      { "id": "q1", "question": "Comment prendre rendez-vous ?", "answer": "Vous pouvez nous appeler directement au 06 75 75 76 88, nous contacter via WhatsApp ou remplir le formulaire de réservation ci-dessous." },
+      { "id": "q2", "question": "Acceptez-vous les mutuelles ?", "answer": "Oui, nous collaborons avec la plupart des assurances et mutuelles nationales (CNSS, CNOPS, etc.). N'hésitez pas à nous demander les documents nécessaires." },
+      { "id": "q3", "question": "Les soins sont-ils douloureux ?", "answer": "Nous utilisons des techniques modernes d'anesthésie et une approche douce pour garantir des soins sans douleur et minimiser l'appréhension." },
+      { "id": "q4", "question": "Où se trouve la clinique ?", "answer": "La clinique est idéalement située à Tanger. L'adresse exacte et le plan d'accès sont disponibles dans la section Contact ci-dessous." }
+    ]
+  },
+  "appointment": {
+    "title": "Prendre Rendez-vous",
+    "lead": "Réservez votre consultation en quelques clics ou contactez-nous directement.",
+    "byPhoneLabel": "Par téléphone",
+    "hoursLabel": "Horaires",
+    "phone": "06 75 75 76 88",
+    "email": "contact@drbenjebara.ma",
+    "hours": "Lun-Ven: 09:00 - 19:00 | Sam: 09:00 - 14:00",
+    "fields": {
+      "nameLabel": "Nom complet",
+      "namePlaceholder": "Votre nom",
+      "phoneLabel": "Téléphone",
+      "phonePlaceholder": "06 .. .. .. ..",
+      "serviceLabel": "Service souhaité",
+      "messageLabel": "Message (optionnel)",
+      "messagePlaceholder": "Détails de votre demande..."
+    },
+    "buttonText": "Envoyer ma demande",
+    "submittingText": "Envoi en cours...",
+    "successMessage": "Votre demande de rendez-vous a été envoyée avec succès! Nous vous contacterons très prochainement."
+  },
+  "contact": {
+    "eyebrow": "Localisation",
+    "title": "Contactez-nous",
+    "lead": "Nous sommes là pour répondre à toutes vos questions.",
+    "addressLabel": "Adresse",
+    "address": "[ Adresse complète de la clinique ], Tanger, Maroc",
+    "directLabel": "Direct",
+    "emailLabel": "Email",
+    "phoneLabel": "Tél",
+    "email": "contact@drbenjebara.ma",
+    "phone": "06 75 75 76 88",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51838.835154388836!2d-5.834016723223048!3d35.76426744883492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b8058a9e0f6f7%3A0x6bda190d6d5a5700!2sTangier%2C%20Morocco!5e0!3m2!1sen!2s!4v1718442000000!5m2!1sen!2s"
+  },
+  "footer": {
+    "description": "Excellence et bien-être dentaire à Tanger. Soins multidisciplinaires pour toute la famille.",
+    "navigationTitle": "Navigation",
+    "legalTitle": "Légal",
+    "socialTitle": "Suivez-nous",
+    "copyright": "© 2026 Cabinet Dentaire Dr. Benjebara Ghali. Tous droits réservés.",
+    "builtWith": "Conçu avec excellence."
+  }
+}

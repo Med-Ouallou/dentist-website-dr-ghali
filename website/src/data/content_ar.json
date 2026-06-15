@@ -1,0 +1,194 @@
+{
+  "meta": {
+    "logoName": "د. بنجباره غالي",
+    "phone": "06 75 75 76 88",
+    "email": "contact@drbenjebara.ma",
+    "instagram": "https://www.instagram.com/cabinet_dr_benjebara_ghali",
+    "whatsapp": "https://wa.me/212675757688"
+  },
+  "navbar": {
+    "ctaText": "احجز موعداً",
+    "links": [
+      { "label": "الرئيسية", "href": "#home" },
+      { "label": "من نحن", "href": "#about" },
+      { "label": "خدماتنا", "href": "#services" },
+      { "label": "الرواق", "href": "#gallery" },
+      { "label": "النتائج", "href": "#results" },
+      { "label": "اتصل بنا", "href": "#contact" }
+    ]
+  },
+  "hero": {
+    "eyebrow": "التميز في طب الأسنان",
+    "title1": "أعد تحديد ",
+    "titleAccent": "ابتسامتك",
+    "title2": " بخبرة عالية الجودة.",
+    "subtitle": "عيادة طب الأسنان متعددة التخصصات بطنجة. يرافقكم الدكتور بنجباره غالي لتقديم علاجات استثنائية تجمع بين التكنولوجيا والراحة.",
+    "image": "/smiling-doctor-new.png",
+    "ctaText": "اكتشف علاجاتنا",
+    "phone": "06 75 75 76 88"
+  },
+  "stats": {
+    "items": [
+      { "value": "10", "suffix": "+", "label": "سنوات الخبرة" },
+      { "value": "2k", "suffix": "+", "label": "مرضى راضون" },
+      { "value": "15", "suffix": "+", "label": "خدمات متخصصة" },
+      { "value": "Premium", "suffix": "", "label": "جودة رعاية ممتازة", "isSpecial": true }
+    ]
+  },
+  "about": {
+    "eyebrow": "أخصائيكم",
+    "title": "د. بنجباره غالي",
+    "subtitle": "جراح أسنان وطب الأسنان",
+    "image": "/doctor-about.jpg",
+    "paragraphs": [
+      "تخرج الدكتور بنجباره غالي بتميز، ويدير عيادة متعددة التخصصات في طنجة. شغوف بالابتكار، ويدمج أحدث التقنيات لضمان تشخيص دقيق وعلاجات مستدامة.",
+      "مهمتنا هي تقديم رعاية أسنان عالية الجودة في بيئة هادئة، حيث يتلقى كل مريض اهتمامًا شخصيًا."
+    ],
+    "cards": [
+      { "title": "الرؤية", "text": "التميز السريري متاح للجميع." },
+      { "title": "القيم", "text": "النزاهة والابتكار والتعاطف." }
+    ]
+  },
+  "services": {
+    "eyebrow": "الخبرات",
+    "title": "خدماتنا متعددة التخصصات",
+    "lead": "مجموعة كاملة من العلاجات لجميع أفراد الأسرة.",
+    "list": [
+      {
+        "title": "جراحة الأسنان",
+        "description": "تدخلات معقدة للخلع وعلاج أمراض الفم.",
+        "image": "/services-images/cirurgia.jpg"
+      },
+      {
+        "title": "تقويم الأسنان",
+        "description": "محاذاة مثالية للابتسامة بحلول تقليدية أو غير مرئية.",
+        "image": "/services-images/orthodontiste.jpg"
+      },
+      {
+        "title": "زراعة الأسنان",
+        "description": "استبدال دائم للأسنان المفقودة بمواد متوافقة حيوياً.",
+        "image": "/services-images/implant-dentaire.jpg.webp"
+      },
+      {
+        "title": "تبييض الأسنان",
+        "description": "استعد بريق ابتسامتك بعلاج احترافي وآمن.",
+        "image": "/services-images/blanchement.jpeg"
+      },
+      {
+        "title": "أطقم الأسنان",
+        "description": "تصميم التيجان والجسور لاستعادة جمالية ووظيفية.",
+        "image": "/services-images/Prothèses.jpg"
+      },
+      {
+        "title": "علاج التسوس",
+        "description": "علاجات محافظة بمواد تجميلية عالية الجودة.",
+        "image": "/services-images/carie-pm.webp"
+      }
+    ]
+  },
+  "whyUs": {
+    "eyebrow": "ثقة",
+    "title": "المريض في قلب ممارستنا.",
+    "lead": "نحن نجمع بين الخبرة السريرية والاهتمام الخاص براحة مرضانا.",
+    "image": "/equipment-image/Équipement.jpg",
+    "items": [
+      { "title": "معدات حديثة", "text": "الأشعة الرقمية وأدوات الدقة من أحدث جيل." },
+      { "title": "نظافة مضمونة", "text": "بروتوكولات تعقيم صارمة وفقًا للمعايير الدولية." },
+      { "title": "رعاية شخصية", "text": "نهج لطيف لتجربة هادئة وبدون ألم." }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "الرواق",
+    "title": "معرض الصور",
+    "items": [
+      { "src": "/doctor-about.jpg", "alt": "Cabinet Réception", "span": 2 },
+      { "src": "/services-images/cirurgia.jpg", "alt": "Salle de Soin", "span": 1 },
+      { "src": "/equipment-image/Équipement.jpg", "alt": "Équipement moderne", "span": 1 },
+      { "src": "/services-images/Prothèses.jpg", "alt": "Laboratoire clinique", "span": 1 },
+      { "src": "/dental-implants.jpg.webp", "alt": "Vue d'ensemble de la Clinique", "span": 3 }
+    ]
+  },
+  "results": {
+    "eyebrow": "تحولات",
+    "title": "نتائج قبل / بعد",
+    "lead": "اكتشف الابتسامات التي قمنا باستعادتها بكل شغف ودقة.",
+    "list": [
+      {
+        "label": "Veneers",
+        "before": "/after-before/Veneers_before.jpg",
+        "after": "/after-before/Veneers_after.jpg"
+      },
+      {
+        "label": "Hollywood",
+        "before": "/after-before/hollywood_before.png",
+        "after": "/after-before/hollywood_after.png"
+      },
+      {
+        "label": "Veneer",
+        "before": "/after-before/veneer_before.png",
+        "after": "/after-before/veneer_after.png"
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "آراء المرضى",
+    "title": "يثقون بنا",
+    "list": [
+      { "stars": 5, "quote": "طاقم عمل محترف للغاية ومتجاوب. يتم إجراء العلاجات بلطف شديد. أنصح بشدة بالدكتور غالي.", "author": "أحمد ر." },
+      { "stars": 5, "quote": "معدات حديثة ونظافة لا تشوبها شائبة. نتيجة زرع الأسنان مثالية وطبيعية للغاية.", "author": "سارة م." },
+      { "stars": 5, "quote": "ترحيب ممتاز والتزام بالوقت. يشرح الطبيب كل مرحلة من مراحل العلاج بشكل جيد للغاية. مطمئن جداً.", "author": "يوسف ك." }
+    ]
+  },
+  "faq": {
+    "eyebrow": "مساعدة",
+    "title": "الأسئلة المتكررة",
+    "list": [
+      { "id": "q1", "question": "كيف يمكنني حجز موعد؟", "answer": "يمكنكم الاتصال بنا مباشرة على 06 75 75 76 88، أو مراسلتنا عبر الواتساب أو ملء استمارة الحجز أدناه." },
+      { "id": "q2", "question": "هل تقبلون بطاقات التأمين التعاضدي؟", "answer": "نعم، نحن نتعاون مع معظم شركات التأمين والتعاضديات الوطنية (CNSS، CNOPS، إلخ). لا تتردد في طلب الوثائق اللازمة." },
+      { "id": "q3", "question": "هل العلاجات مؤلمة؟", "answer": "نحن نستخدم تقنيات التخدير الحديثة ونهجاً لطيفاً لضمان علاجات خالية من الألم وتقليل القلق." },
+      { "id": "q4", "question": "أين تقع العيادة؟", "answer": "تقع العيادة في موقع متميز بطنجة. العنوان الدقيق وخريطة الوصول متوفرة في قسم الاتصال أدناه." }
+    ]
+  },
+  "appointment": {
+    "title": "احجز موعداً",
+    "lead": "احجز استشارتك بنقرات قليلة أو اتصل بنا مباشرة.",
+    "byPhoneLabel": "عبر الهاتف",
+    "hoursLabel": "أوقات العمل",
+    "phone": "06 75 75 76 88",
+    "email": "contact@drbenjebara.ma",
+    "hours": "الاثنين - الجمعة: 09:00 - 19:00 | السبت: 09:00 - 14:00",
+    "fields": {
+      "nameLabel": "الاسم الكامل",
+      "namePlaceholder": "اسمك",
+      "phoneLabel": "الهاتف",
+      "phonePlaceholder": "06 .. .. .. ..",
+      "serviceLabel": "الخدمة المطلوبة",
+      "messageLabel": "رسالة (اختياري)",
+      "messagePlaceholder": "تفاصيل طلبك..."
+    },
+    "buttonText": "إرسال الطلب",
+    "submittingText": "جاري الإرسال...",
+    "successMessage": "تم إرسال طلب الموعد بنجاح! سنتصل بك في أقرب وقت ممكن."
+  },
+  "contact": {
+    "eyebrow": "الموقع",
+    "title": "اتصل بنا",
+    "lead": "نحن هنا للإجابة على جميع أسئلتكم.",
+    "addressLabel": "العنوان",
+    "address": "[ العنوان الكامل للعيادة ]، طنجة، المغرب",
+    "directLabel": "مباشر",
+    "emailLabel": "البريد الإلكتروني",
+    "phoneLabel": "الهاتف",
+    "email": "contact@drbenjebara.ma",
+    "phone": "06 75 75 76 88",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51838.835154388836!2d-5.834016723223048!3d35.76426744883492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b8058a9e0f6f7%3A0x6bda190d6d5a5700!2sTangier%2C%20Morocco!5e0!3m2!1sen!2s!4v1718442000000!5m2!1sen!2s"
+  },
+  "footer": {
+    "description": "التميز والعافية للأسنان بطنجة. رعاية متعددة التخصصات لجميع أفراد الأسرة.",
+    "navigationTitle": "التصفح",
+    "legalTitle": "قانوني",
+    "socialTitle": "تابعنا",
+    "copyright": "© 2026 عيادة طب الأسنان الدكتور بنجباره غالي. كل الحقوق محفوظة.",
+    "builtWith": "صمم بتميز."
+  }
+}

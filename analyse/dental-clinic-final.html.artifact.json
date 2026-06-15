@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "dental-clinic-final.html",
+  "entry": "dental-clinic-final.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-06-14T17:23:36.760Z",
+  "updatedAt": "2026-06-14T17:23:36.760Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

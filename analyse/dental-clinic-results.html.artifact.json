@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "Cabinet Dentaire Dr. Benjebara Ghali — Site avec Résultats",
+  "entry": "dental-clinic-results.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "primary": true,
+  "createdAt": "2026-06-14T17:34:55.202Z",
+  "updatedAt": "2026-06-14T17:34:55.216Z",
+  "sourceSkillId": "agent-browser",
+  "designSystemId": "glassmorphism",
+  "metadata": {
+    "identifier": "dental-clinic-results",
+    "artifactType": "text/html",
+    "inferred": false
+  }
+}

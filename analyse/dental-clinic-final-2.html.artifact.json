@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "Cabinet Dentaire Dr. Benjebara Ghali — Site Officiel v3",
+  "entry": "dental-clinic-final-2.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "primary": true,
+  "createdAt": "2026-06-14T17:24:51.140Z",
+  "updatedAt": "2026-06-14T17:24:51.156Z",
+  "sourceSkillId": "agent-browser",
+  "designSystemId": "glassmorphism",
+  "metadata": {
+    "identifier": "dental-clinic-final",
+    "artifactType": "text/html",
+    "inferred": false
+  }
+}
