@@ -13,17 +13,48 @@ export default function FAQ() {
     setActiveId(activeId === id ? null : id);
   };
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.08
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] }
+    }
+  };
+
   return (
     <section id="faq" className="section" data-od-id="faq" style={{ background: 'white' }}>
       <div className="container" style={{ maxWidth: '800px' }}>
-        <div className="reveal" style={{ textAlign: 'center', marginBottom: '48px' }}>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          style={{ textAlign: 'center', marginBottom: '48px' }}
+        >
           <span className="eyebrow">{eyebrow}</span>
           <h2 className="h2">{title}</h2>
-        </div>
-        <div className="stack">
+        </motion.div>
+        <motion.div 
+          className="stack"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {list.map((item) => (
-            <div 
+            <motion.div 
               key={item.id} 
+              variants={itemVariants}
               className={`accordion-item ${activeId === item.id ? 'active' : ''}`}
             >
               <button 
@@ -56,9 +87,9 @@ export default function FAQ() {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

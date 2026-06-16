@@ -14,6 +14,7 @@ export default function Navbar() {
   const navLinks = t.navbar.links;
 
   useEffect(() => {
+    // Scroll state for scrolled class
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setScrolled(true);
@@ -22,11 +23,48 @@ export default function Navbar() {
       }
     };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    handleScroll(); // Check scroll position immediately on mount / reload
+
+    // Dynamic Section Tracker
+    const observerOptions = {
+      root: null,
+      rootMargin: '-40% 0px -45% 0px', // Triggers when section enters active middle viewport range
+      threshold: 0
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          if (id) {
+            setActiveSection(`#${id}`);
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe each section target
+    navLinks.forEach((link) => {
+      const targetId = link.href.replace('#', '');
+      const element = document.getElementById(targetId);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
+    };
+  }, [navLinks]);
 
   return (
-    <header 
+    <motion.header 
+      initial={{ y: -70, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className={`topnav ${scrolled ? 'scrolled' : ''}`}
       data-od-id="topnav"
       style={{
@@ -334,6 +372,6 @@ export default function Navbar() {
           {t.navbar.ctaText}
         </a>
       </div>
-    </header>
+    </motion.header>
   );
 }

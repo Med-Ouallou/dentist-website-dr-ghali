@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function ResultsSlider() {
@@ -17,18 +18,56 @@ export default function ResultsSlider() {
     setSliderVals(nextVals);
   };
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+    }
+  };
+
   return (
     <section id="results" className="section" data-od-id="results" style={{ background: 'white' }}>
       <div className="container">
-        <div className="reveal" style={{ textAlign: 'center', marginBottom: '64px' }}>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          style={{ textAlign: 'center', marginBottom: '64px' }}
+        >
           <span className="eyebrow">{eyebrow}</span>
           <h2 className="h2">{title}</h2>
           <p className="lead" style={{ marginInline: 'auto', marginTop: '16px' }}>{lead}</p>
-        </div>
+        </motion.div>
         
-        <div className="grid-3" style={{ gap: '32px' }}>
+        <motion.div 
+          className="grid-3" 
+          style={{ gap: '32px' }}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {list.map((item, index) => (
-            <div key={index} className="card reveal" style={{ padding: 0, overflow: 'hidden', border: 'none' }}>
+            <motion.div 
+              key={index} 
+              className="card" 
+              variants={itemVariants}
+              whileHover={{ y: -6 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+              style={{ padding: 0, overflow: 'hidden', border: 'none' }}
+            >
               <div className="comparison-slider" style={{ borderRadius: 'var(--radius-lg)' }}>
                 <div className="image-after">
                   <Image 
@@ -57,9 +96,9 @@ export default function ResultsSlider() {
                 <div className="label label-before">Avant</div>
                 <div className="label label-after">Après</div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

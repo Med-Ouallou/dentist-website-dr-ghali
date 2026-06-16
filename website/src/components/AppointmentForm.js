@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function AppointmentForm() {
@@ -62,7 +63,13 @@ export default function AppointmentForm() {
   return (
     <section id="appointment" className="section" data-od-id="appointment">
       <div className="container">
-        <div className="card reveal card-large">
+        <motion.div 
+          initial={{ opacity: 0, y: 40, scale: 0.98 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="card card-large"
+        >
           <div className="grid-2 gap-large">
             <div className="stack" style={{ gap: '32px' }}>
               <div>
@@ -172,7 +179,7 @@ export default function AppointmentForm() {
               </button>
             </form>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -52,6 +52,8 @@ export default function Services() {
               key={index} 
               className="card" 
               variants={itemVariants}
+              whileHover={{ y: -8, scale: 1.02 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
               style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
             >
               <div style={{ position: 'relative', width: '100%', aspectRatio: '16/10', overflow: 'hidden', background: 'var(--bg-muted)' }}>

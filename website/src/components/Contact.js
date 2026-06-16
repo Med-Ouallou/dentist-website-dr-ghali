@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Contact() {
@@ -6,21 +7,63 @@ export default function Contact() {
   const { eyebrow, title, lead, addressLabel, address, directLabel, emailLabel, phoneLabel, mapUrl } = content.contact;
   const { email, phone, instagram, whatsapp } = content.meta;
 
+  const leftContainerVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.16, 1, 0.3, 1],
+        staggerChildren: 0.15,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: 'easeOut' }
+    }
+  };
+
   return (
-    <section id="contact" className="section" data-od-id="contact" style={{ background: 'white' }}>
+    <section id="contact" className="section" data-od-id="contact" style={{ background: 'white', overflow: 'hidden' }}>
       <div className="container grid-2 gap-large">
-        <div className="stack reveal" style={{ gap: '40px' }}>
+        <motion.div 
+          variants={leftContainerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="stack" 
+          style={{ gap: '40px' }}
+        >
           <div>
             <span className="eyebrow">{eyebrow}</span>
             <h2 className="h2">{title}</h2>
             <p className="lead" style={{ marginTop: '16px' }}>{lead}</p>
           </div>
           <div className="stack" style={{ gap: '24px' }}>
-            <div className="card" style={{ padding: '24px' }}>
+            <motion.div 
+              variants={cardVariants}
+              whileHover={{ y: -4, scale: 1.01 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+              className="card" 
+              style={{ padding: '24px' }}
+            >
               <h4 style={{ fontWeight: 700, marginBottom: '8px' }}>{addressLabel}</h4>
               <p style={{ color: 'var(--muted)', fontSize: '14px' }}>{address}</p>
-            </div>
-            <div className="card" style={{ padding: '24px' }}>
+            </motion.div>
+            <motion.div 
+              variants={cardVariants}
+              whileHover={{ y: -4, scale: 1.01 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+              className="card" 
+              style={{ padding: '24px' }}
+            >
               <h4 style={{ fontWeight: 700, marginBottom: '16px' }}>{directLabel}</h4>
               <div className="stack" style={{ gap: '12px' }}>
                 <a href={`mailto:${email}`} className="contact-link" style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--muted)', fontSize: '14px', textDecoration: 'none' }}>
@@ -54,10 +97,16 @@ export default function Contact() {
                   <span>Instagram</span>
                 </a>
               </div>
-            </div>
+            </motion.div>
           </div>
-        </div>
-        <div className="reveal" style={{ aspectRatio: '1/1', borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '1px solid var(--border-rich)', boxShadow: '0 12px 40px rgba(0, 181, 176, 0.05)' }}>
+        </motion.div>
+        <motion.div 
+          initial={{ opacity: 0, x: 50, scale: 0.95 }}
+          whileInView={{ opacity: 1, x: 0, scale: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          style={{ aspectRatio: '1/1', borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '1px solid var(--border-rich)', boxShadow: '0 12px 40px rgba(0, 181, 176, 0.05)' }}
+        >
           <iframe 
             src={mapUrl} 
             width="100%" 
@@ -67,7 +116,7 @@ export default function Contact() {
             loading="lazy" 
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

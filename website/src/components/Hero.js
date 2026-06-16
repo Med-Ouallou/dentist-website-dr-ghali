@@ -1,8 +1,31 @@
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Hero() {
   const { t: content, lang } = useLanguage();
+  
+  // Animation variants for staggered load
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+    }
+  };
+
   return (
     <section 
       id="home" 
@@ -18,8 +41,11 @@ export default function Hero() {
       }}
     >
       {/* Full-width Background dentist image */}
-      <div 
+      <motion.div 
         className="hero-image-wrapper" 
+        initial={{ opacity: 0, scale: 1.15 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
         style={{ 
           position: 'absolute', 
           inset: 0,
@@ -56,13 +82,20 @@ export default function Hero() {
             }}
           />
         </div>
-      </div>
+      </motion.div>
 
       <div className="container hero-container" style={{ position: 'relative', zIndex: 2 }}>
-        <div className="hero-content hero-stagger" style={{ maxWidth: '600px', display: 'flex', flexDirection: 'column', gap: '32px' }}>
+        <motion.div 
+          className="hero-content hero-stagger"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          style={{ maxWidth: '600px', display: 'flex', flexDirection: 'column', gap: '32px' }}
+        >
           <div>
-            <span 
+            <motion.span 
               className="eyebrow" 
+              variants={itemVariants}
               style={{ 
                 fontFamily: 'var(--font-body)', 
                 fontSize: '13px', 
@@ -74,9 +107,10 @@ export default function Hero() {
               }}
             >
               {content.hero.eyebrow}
-            </span>
-            <h1 
+            </motion.span>
+            <motion.h1 
               className="h1" 
+              variants={itemVariants}
               style={{ 
                 fontSize: 'clamp(36px, 5vw, 64px)', 
                 fontWeight: '800', 
@@ -86,9 +120,10 @@ export default function Hero() {
               }}
             >
               {content.hero.title1}<span style={{ color: 'var(--accent)' }}>{content.hero.titleAccent}</span>{content.hero.title2}
-            </h1>
-            <p 
+            </motion.h1>
+            <motion.p 
               className="lead" 
+              variants={itemVariants}
               style={{ 
                 marginTop: '24px', 
                 fontSize: '18px', 
@@ -98,10 +133,14 @@ export default function Hero() {
               }}
             >
               {content.hero.subtitle}
-            </p>
+            </motion.p>
           </div>
           
-          <div className="row" style={{ gap: '16px', flexWrap: 'wrap' }}>
+          <motion.div 
+            className="row" 
+            variants={itemVariants}
+            style={{ gap: '16px', flexWrap: 'wrap' }}
+          >
             <a 
               href="#services" 
               className="btn btn-primary"
@@ -133,8 +172,8 @@ export default function Hero() {
               </svg>
               <span className="force-ltr">{content.hero.phone}</span>
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
