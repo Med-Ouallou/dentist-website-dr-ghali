@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useLanguage } from '../context/LanguageContext';
@@ -11,7 +11,23 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState('#home');
   const [scrolled, setScrolled] = useState(false);
 
+  const isClickScrolling = useRef(false);
+  const clickTimeoutRef = useRef(null);
+
   const navLinks = t.navbar.links;
+
+  const handleNavLinkClick = (href) => {
+    setActiveSection(href);
+    isClickScrolling.current = true;
+
+    if (clickTimeoutRef.current) {
+      clearTimeout(clickTimeoutRef.current);
+    }
+
+    clickTimeoutRef.current = setTimeout(() => {
+      isClickScrolling.current = false;
+    }, 1000);
+  };
 
   useEffect(() => {
     // Scroll state for scrolled class
@@ -33,6 +49,8 @@ export default function Navbar() {
     };
 
     const observerCallback = (entries) => {
+      if (isClickScrolling.current) return;
+
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const id = entry.target.getAttribute('id');
@@ -57,6 +75,9 @@ export default function Navbar() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
       observer.disconnect();
+      if (clickTimeoutRef.current) {
+        clearTimeout(clickTimeoutRef.current);
+      }
     };
   }, [navLinks]);
 
@@ -96,6 +117,7 @@ export default function Navbar() {
         <a 
           href="#home" 
           className="logo" 
+          onClick={() => handleNavLinkClick('#home')}
           style={{ 
             display: 'flex', 
             alignItems: 'center', 
@@ -148,7 +170,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                onClick={() => setActiveSection(link.href)}
+                onClick={() => handleNavLinkClick(link.href)}
                 className={`nav-item-link ${isActive ? 'active' : ''}`}
                 style={{
                   position: 'relative',
@@ -174,7 +196,7 @@ export default function Navbar() {
                       borderRadius: '50px',
                       zIndex: -1
                     }}
-                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                    transition={{ type: 'spring', stiffness: 100, damping: 18 }}
                   />
                 )}
                 {link.label}
@@ -286,7 +308,7 @@ export default function Navbar() {
               href={link.href}
               className={activeSection === link.href ? 'active' : ''}
               onClick={() => {
-                setActiveSection(link.href);
+                handleNavLinkClick(link.href);
                 setMobileOpen(false);
               }}
               style={{
