@@ -133,31 +133,88 @@ export default function AppointmentForm() {
                   <div 
                     className="custom-select-trigger" 
                     onClick={() => setDropdownOpen(!dropdownOpen)}
+                    style={{
+                      height: '48px',
+                      borderColor: 'var(--border-rich)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'between',
+                      cursor: 'pointer',
+                      background: '#ffffff',
+                      borderRadius: 'var(--radius)',
+                      paddingInline: '16px'
+                    }}
                   >
                     <span>{formData.service || servicesOptions[0]}</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)', transform: dropdownOpen ? 'rotate(180deg)' : 'none', color: 'var(--accent)' }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4a5555" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)', transform: dropdownOpen ? 'rotate(180deg)' : 'none', marginLeft: 'auto' }}>
                       <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                   </div>
-                  <div className="custom-select-options">
-                    {servicesOptions.map((opt, index) => (
-                      <div 
-                        key={index} 
-                        className={`custom-select-option ${formData.service === opt ? 'selected' : ''}`}
-                        onClick={() => {
-                          setFormData({ ...formData, service: opt });
-                          setDropdownOpen(false);
-                        }}
-                      >
-                        <span>{opt}</span>
-                        {formData.service === opt && (
-                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                          </svg>
-                        )}
-                      </div>
-                    ))}
-                  </div>
+                  {dropdownOpen && (
+                    <div 
+                      className="custom-select-options"
+                      data-lenis-prevent
+                      style={{
+                        position: 'absolute',
+                        top: 'calc(100% + 6px)',
+                        left: 0,
+                        right: 0,
+                        background: '#ffffff',
+                        border: '1px solid var(--border-rich)',
+                        borderRadius: 'var(--radius)',
+                        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                        zIndex: 100,
+                        padding: '6px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '2px',
+                        maxHeight: '220px',
+                        overflowY: 'auto'
+                      }}
+                    >
+                      {servicesOptions.map((opt, index) => (
+                        <div 
+                          key={index} 
+                          className={`custom-select-option ${formData.service === opt ? 'selected' : ''}`}
+                          onClick={() => {
+                            setFormData({ ...formData, service: opt });
+                            setDropdownOpen(false);
+                          }}
+                          style={{
+                            padding: '10px 12px',
+                            borderRadius: 'calc(var(--radius) - 4px)',
+                            fontSize: '14px',
+                            color: formData.service === opt ? 'white' : 'var(--muted)',
+                            background: formData.service === opt ? 'var(--accent)' : 'transparent',
+                            cursor: 'pointer',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'space-between',
+                            transition: 'background 0.2s ease'
+                          }}
+                          onMouseEnter={(e) => {
+                            if (formData.service !== opt) {
+                              e.currentTarget.style.background = 'var(--accent-soft)';
+                              e.currentTarget.style.color = 'var(--accent)';
+                            }
+                          }}
+                          onMouseLeave={(e) => {
+                            if (formData.service !== opt) {
+                              e.currentTarget.style.background = 'transparent';
+                              e.currentTarget.style.color = 'var(--muted)';
+                            }
+                          }}
+                        >
+                          <span>{opt}</span>
+                          {formData.service === opt && (
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+                              <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
               <div className="field">

@@ -55,9 +55,21 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="row-between reveal" style={{ paddingTop: '32px', borderTop: '1px solid var(--border-rich)', opacity: 0.6, fontSize: '12px' }}>
+        <div className="row-between reveal" style={{ paddingTop: '32px', borderTop: '1px solid var(--border-rich)', fontSize: '13px', flexWrap: 'wrap', gap: '16px', color: 'rgba(255, 255, 255, 0.95)' }}>
           <span>{copyright}</span>
-          <span>{builtWith}</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <span>{builtWith}</span>
+            <span style={{ opacity: 0.5 }}>|</span>
+            <a 
+              href="https://mohamed-ouallou.vercel.app/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              style={{ display: 'flex', alignItems: 'center', gap: '6px', fontWeight: 600, color: 'white' }}
+              className="developer-credit-link"
+            >
+              Developed by Mohamed Ouallou
+            </a>
+          </div>
         </div>
       </div>
     </footer>

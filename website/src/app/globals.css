@@ -308,12 +308,17 @@ html[lang="ar"] .contact-link:hover {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300B5B0' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a5555' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 16px center;
-  background-size: 16px;
+  background-size: 14px;
   padding-right: 40px;
   cursor: pointer;
+}
+.select option {
+  background-color: #ffffff;
+  color: #1a1a1a;
 }
 html[lang="ar"] .select {
   background-position: left 16px center;
@@ -385,21 +390,25 @@ html[lang="ar"] .select {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 350px);
+  grid-auto-rows: 350px;
   gap: 16px;
 }
 @media (max-width: 920px) {
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
+    grid-auto-rows: 250px;
   }
 }
 @media (max-width: 480px) {
   .gallery-grid {
     grid-template-columns: 1fr;
+    grid-auto-rows: 250px;
+  }
+  .gallery-item {
+    grid-column: span 1 !important;
   }
 }
-.gallery-item { border-radius: var(--radius-lg); overflow: hidden; position: relative; }
+.gallery-item { border-radius: var(--radius-lg); overflow: hidden; position: relative; height: 100%; }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; }
 .gallery-item:hover img { transform: scale(1.1); }
 
@@ -436,6 +445,7 @@ html[lang="ar"] .select {
   z-index: 2;
   border-right: 2px solid white;
   overflow: hidden;
+  direction: ltr !important;
 }
 .comparison-slider .slider {
   position: absolute;
@@ -589,18 +599,27 @@ html[lang="ar"] .select {
 
 /* Arabic Language Optimizations */
 html[lang="ar"] {
-  font-size: 17px; /* Increase base font size slightly to compensate for Arabic character visual weight */
+  font-size: 18px;
 }
-html[lang="ar"] body,
+html[lang="ar"] body {
+  font-family: var(--font-arabic), var(--font-body), system-ui, sans-serif !important;
+  line-height: 1.85; /* Increase line spacing for dense Arabic script */
+}
 html[lang="ar"] .h1, html[lang="ar"] h1,
 html[lang="ar"] .h2, html[lang="ar"] h2,
 html[lang="ar"] .h3, html[lang="ar"] h3,
 html[lang="ar"] .logo, html[lang="ar"] .btn,
 html[lang="ar"] input, html[lang="ar"] select, html[lang="ar"] textarea {
   font-family: var(--font-arabic), var(--font-body), system-ui, sans-serif !important;
+  line-height: 1.45; /* Clean heading line height for Cairo font */
 }
 html[lang="ar"] .eyebrow {
-  letter-spacing: 0.05em; /* Reduce wide letter-spacing on Arabic eyebrows */
+  letter-spacing: 0.02em; /* Reduce wide letter-spacing on Arabic eyebrows */
+  font-weight: 700;
+}
+html[lang="ar"] p {
+  line-height: 1.85;
+  font-weight: 500; /* Use medium weight to make Arabic text stand out clearly */
 }
 
 /* Force LTR direction for numbers/phones in RTL layout */
@@ -789,6 +808,25 @@ html.lenis body {
 
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
+}
+
+/* ─── infinite scroll animation marquee ─────────────────── */
+@keyframes scroll-ltr {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-33.333% - 8px));
+  }
+}
+
+@keyframes scroll-rtl {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(33.333% + 8px));
+  }
 }
 
 

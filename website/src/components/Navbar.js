@@ -142,6 +142,7 @@ export default function Navbar() {
               fill
               sizes="48px"
               style={{ objectFit: 'cover' }}
+              priority
             />
           </div>
           <span style={{ fontWeight: 700, fontSize: '18px', letterSpacing: '-0.01em' }}>{t.meta.logoName}</span>

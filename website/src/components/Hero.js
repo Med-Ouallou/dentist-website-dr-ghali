@@ -37,7 +37,8 @@ export default function Hero() {
         overflow: 'hidden', 
         background: '#0F1717', 
         paddingTop: '120px',
-        paddingBottom: '60px'
+        paddingBottom: '60px',
+        direction: 'ltr'
       }}
     >
       {/* Full-width Background dentist image */}
@@ -77,20 +78,26 @@ export default function Hero() {
             style={{
               position: 'absolute',
               inset: 0,
-              background: `linear-gradient(${lang === 'ar' ? 'to left' : 'to right'}, rgba(15, 23, 23, 0.85) 0%, rgba(15, 23, 23, 0.45) 50%, rgba(15, 23, 23, 0.3) 100%), linear-gradient(to top, rgba(15, 23, 23, 0.8) 0%, transparent 4%)`,
+              background: `linear-gradient(to right, rgba(15, 23, 23, 0.85) 0%, rgba(15, 23, 23, 0.45) 50%, rgba(15, 23, 23, 0.3) 100%), linear-gradient(to top, rgba(15, 23, 23, 0.8) 0%, transparent 4%)`,
               pointerEvents: 'none'
             }}
           />
         </div>
       </motion.div>
 
-      <div className="container hero-container" style={{ position: 'relative', zIndex: 2 }}>
+      <div className="container hero-container" style={{ position: 'relative', zIndex: 2, direction: lang === 'ar' ? 'rtl' : 'ltr' }}>
         <motion.div 
           className="hero-content hero-stagger"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          style={{ maxWidth: '600px', display: 'flex', flexDirection: 'column', gap: '32px' }}
+          style={{ 
+            maxWidth: '600px', 
+            display: 'flex', 
+            flexDirection: 'column', 
+            gap: '32px',
+            textAlign: 'start'
+          }}
         >
           <div>
             <motion.span 
